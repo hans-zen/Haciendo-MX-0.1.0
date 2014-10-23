@@ -1,0 +1,126 @@
+@import "../jeet/index"
+@import "compass"
+@import "compass/utilities"
+@import "compass/css3"
+@import "compass/css3/transform"
+@import "_init"
+@import "_events"
+@import "_dashboard"
++global-reset
+
+
+a
+	color: white
+	text-decoration: none
+	+helvetica(200)
+.splash
+	+helvetica(300)
+	color: white
+	background:
+		image: url("../img/splashbackground.jpg")
+		repeat: no-repeat
+		position: center
+		+background-size(cover)
+	height: 100%
+	position: relative
+
+	.nav
+		+center(95%)
+		a
+			+helvetica(400)
+			color: white
+			float: right
+			padding-right: 1em
+			padding-left: 1em
+			padding-top: 1em
+			padding-bottom: .5em
+			font-size: 2em			
+		a:hover
+			border-bottom: solid $pink 2px
+	.splash-container
+		+center(50%)
+		text-align: center
+		img 
+			max-width: 70%
+
+		
+	.events-btn
+		cursor: pointer
+		margin-top: $spacer*3
+		+center(50%)
+		border: 1px solid white
+		
+		h2
+			font-size: 2.3em
+			padding-bottom: .5em
+
+		i
+			padding-top: .5em
+		&:hover
+			background: $semiwhite
+
+.ghost
+	display: none
+.container
+	+center(90%)
+	p
+		margin-top: $spacer
+		+helvetica(300)
+		font-size: 2em
+		line-height: 140%
+	h2
+		margin-top: $spacer
+		+helvetica(400)
+		font-size: 2.5em
+	.contact
+		text-align: center
+		+center(100%)
+		margin-top: $spacer*2
+		.contact-type
+			margin-top: $spacer
+			text-align: center
+			+col(1)
+		a
+			text-align: center
+			font-size: 2.5em
+			+helvetica(300)
+			text-decoration: none
+			font-style: none
+			color: $gray
+		.twit:hover
+			color: #55acee
+		.mail:hover
+			color: tomato
+		i
+			font-size: 2em
+	#mc_embed_signup
+		background: #fff
+		clear: left
+
+
+@media screen and (max-width: 1920px)
+	html, body
+		font-size: 10px
+
+@media screen and (max-width: 1300px)
+	html, body
+		font-size: 9px
+	.splash-container
+		padding-top: 15%
+		padding-bottom: 15%
+@media screen and (max-width: 400px)
+	html, body
+		font-size: 8px
+	.splash
+		height: 100%
+		.events-btn
+			+center(200px)
+
+@media screen and (min-width: 1260px)
+	.splash-container
+		+vertical-align
+
+@media screen and (max-width: 610px)
+	.splash-container
+		padding-top: $spacer*3
+

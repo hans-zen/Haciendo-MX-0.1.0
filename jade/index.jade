@@ -1,0 +1,37 @@
+doctype
+html
+	include header
+	include includes/mixins
+	body
+		.splash
+			.nav
+				a(href="https://twitter.com/HaciendoMX" target="_blank")<i class="fa fa-twitter"></i>
+				a(href="#" data-featherlight="#about") Acerca de
+			.splash-container
+				img(src="img/logo.png")
+				h1 Innovación, tecnología y emprendimiento <br> en México
+				a(href="dashboard.html").events-btn
+					i.fa.fa-calendar.fa-3x
+					h2 Ver calendario de eventos
+
+
+		.ghost
+			#about
+				.container
+					h1 Haciendo MX Beta
+					p Hemos creado un calendario de eventos relacionados con las comunidades que se reunen en torno a un tema o varios para así poder compartir, aprender, o crear todo tipo de cosas, permitiendo al público acceder de manera directa a la información necesaria para que se unan y las comunidades se fortalezcan.
+					h2 ¿Te gustaría que los eventos de tu comunidad aparecieran en haciendo.mx?
+					p Envíanos un correo electrónico o encuéntranos en Twitter
+					.contact
+						.contact-type
+							a(class="twit" href="https://twitter.com/HaciendoMX" target="_blank")<i class="fa fa-twitter"></i> @HaciendoMX
+						.contact-type
+							a(class="mail" href="mailto:haciendomx@gmail.com")<i class="fa fa-envelope-o"></i> haciendomx@gmail.com
+
+
+
+	script(src="app/bower_components/jquery/dist/jquery.js")
+	script(src="app/bower_components/jquery-ui/jquery-ui.js")
+	script(src="js/analytics.js")
+	script(src="js/box.js")
+

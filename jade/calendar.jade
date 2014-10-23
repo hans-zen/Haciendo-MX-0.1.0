@@ -1,0 +1,19 @@
+doctype
+html
+	include header
+	include includes/mixins
+	body
+		.eventos
+			.full-container
+				.month.main 
+					include month/october2014
+				.month
+					include month/november2014
+
+
+	script(src="app/bower_components/jquery/dist/jquery.js")
+	script(src="app/bower_components/jquery-ui/jquery-ui.js")
+	script(src="js/functions.js")
+	script(type="text/javascript" src="https://addthisevent.com/libs/1.5.8/ate.min.js")
+	script(src="js/scroll.js")
+	script(src="js/analytics.js")

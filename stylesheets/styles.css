@@ -1,0 +1,1302 @@
+/*  Syntax Quick Reference
+  --------------------------
+  column($ratios: 1, $offset: 0, $cycle: 0, $uncycle: 0, $gutter: $jeet-gutter)
+  span($ratio: 1, $offset: 0)
+  shift($ratios: 0, $col_or_span: column, $gutter: $jeet-gutter)
+  unshift()
+  edit()
+  center($max_width: 1410px, $pad: 0)
+  stack($pad: 0, $align: false)
+  unstack()
+  align($direction: both)
+  cf()
+*/
+/**
+ * Grid settings.
+ * All values are defaults and can therefore be easily overidden.
+ */
+/**
+ * List functions courtesy of the wonderful folks at Team Sass.
+ * Check out their awesome grid: Singularity.
+ */
+/**
+ * Get  percentage from a given ratio.
+ * @param {number} [$ratio=1] - The column ratio of the element.
+ * @returns {number} - The percentage value.
+ */
+/**
+ * Work out the column widths based on the ratio and gutter sizes.
+ * @param {number} [$ratios=1] - The column ratio of the element.
+ * @param {number} [$gutter=$jeet-gutter] - The gutter for the column.
+ * @returns {list} $width $gutter - A list containing the with and gutter for the element.
+ */
+/**
+ * Get the set layout direction for the project.
+ * @returns {string} $direction - The layout direction.
+ */
+/**
+ * Replace a specified list value with a new value (uses built in set-nth() if available)
+ * @param {list} $list - The list of values you want to alter.
+ * @param {number} $index - The index of the list item you want to replace.
+ * @param {*} $value - The value you want to replace $index with.
+ * @returns {list} $list - The list with the value replaced or removed.
+ * @warn if an invalid index is supplied.
+ */
+/**
+ * Reverse a list (progressively enhanced for Sass 3.3)
+ * @param {list} $list - The list of values you want to reverse.
+ * @returns {list} $result - The reversed list.
+ */
+/**
+ * Get the opposite direction to a given value.
+ * @param {string} $dir - The direction you want the opposite of.
+ * @returns {string} - The opposite direction to $dir.
+ * @warn if an incorrect string is provided.
+ */
+/**
+ * Style an element as a column with a gutter.
+ * @param {number} [$ratios=1] - A width relative to its container as a fraction.
+ * @param {number} [$offset=0] - A offset specified as a fraction (see $ratios).
+ * @param {number} [$cycle=0] - Easily create an nth column grid where $cycle equals the number of columns.
+ * @param {number} [$uncycle=0] - Undo a previous cycle value to allow for a new one.
+ * @param {number} [$gutter=$jeet-gutter] - Specify the gutter width as a percentage of the containers width.
+ */
+/**
+ * An alias for the column mixin.
+ * @param [$args...] - All arguments get passed through to column().
+ */
+/**
+ * Get the width of a column and nothing else.
+ * @param {number} [$ratios=1] - A width relative to its container as a fraction.
+ * @param {number} [$gutter=$jeet-gutter] - Specify the gutter width as a percentage of the containers width.
+ */
+/**
+ * Get the gutter size of a column and nothing else.
+ * @param {number} [ratios=1] - A width relative to its container as a fraction.
+ * @param {number} [gutter=jeet.gutter] - Specify the gutter width as a percentage of the containers width.
+ */
+/**
+ * An alias for the column-width function.
+ * @param [$args...] - All arguments get passed through to column().
+ */
+/**
+ * An alias for the column-gutter function.
+ * @param [$args...] - All arguments get passed through to column().
+ */
+/**
+ * Style an element as a column without any gutters for a seamless row.
+ * @param {number} [$ratios=1] - A width relative to its container as a fraction.
+ * @param {number} [$offset=0] - A offset specified as a fraction (see $ratios).
+ * @param {number} [cycle=0] - Easily create an nth column grid where cycle equals the number of columns.
+ * @param {number} [uncycle=0] - Undo a previous cycle value to allow for a new one.
+ */
+/**
+ * Reorder columns without altering the HTML.
+ * @param {number} [$ratios=0] - Specify how far along you want the element to move.
+ * @param {string} [$col-or-span=column] - Specify whether the element has a gutter or not.
+ * @param {number} [$gutter=$jeet-gutter] - Specify the gutter width as a percentage of the containers width.
+ */
+/**
+ * Reset an element that has had shift() applied to it.
+ */
+/**
+ * View the grid and its layers for easy debugging.
+ * @param {string} [$color=black] - The background tint applied.
+ * @param {boolean} [$important=false] - Whether to apply the style as !important.
+ */
+/**
+ *  Alias for edit().
+ */
+/**
+ * Horizontally center an element.
+ * @param {number} [$max-width=1410px] - The max width the element can be.
+ * @param {number} [$pad=0] - Specify the element's left and right padding.
+ */
+/**
+ * Uncenter an element.
+ */
+/**
+ * Stack an element so that nothing is either side of it.
+ * @param {number} [$pad=0] - Specify the element's left and right padding.
+ * @param {boolean/string} [$align=false] - Specify the text align for the element.
+ */
+/**
+ * Unstack an element.
+ */
+/**
+ * Center an element on either or both axes.
+ * @requires A parent container with relative positioning.
+ * @param {string} [$direction=both] - Specify which axes to center the element on.
+ */
+/**
+ * Apply a clearfix to an element.
+ */
+/* line 32, ../sass/_init.sass */
+html, body {
+  height: 100%;
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-weight: 300;
+  font-size: 15px;
+  color: #524d5a;
+}
+
+/* line 39, ../sass/_init.sass */
+html h1 {
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-weight: 400;
+  font-size: 3.5em;
+}
+
+/* line 43, ../sass/_init.sass */
+.full-container {
+  *zoom: 1;
+  width: auto;
+  max-width: 100%;
+  float: none;
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 0;
+  padding-right: 0;
+}
+/* line 344, ../jeet/_grid.scss */
+.full-container:before, .full-container:after {
+  content: '';
+  display: table;
+}
+/* line 349, ../jeet/_grid.scss */
+.full-container:after {
+  clear: both;
+}
+
+/* line 8, ../sass/_events.sass */
+.comunidad {
+  background-image: url("../img/blue.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background--moz-background-size: cover;
+  background--o-background-size: cover;
+  background--webkit-background-size: cover;
+  background-background-size: cover;
+}
+
+/* line 10, ../sass/_events.sass */
+.networking {
+  background-image: url("../img/red.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background--moz-background-size: cover;
+  background--o-background-size: cover;
+  background--webkit-background-size: cover;
+  background-background-size: cover;
+}
+
+/* line 12, ../sass/_events.sass */
+.fondos {
+  background-image: url("../img/green.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background--moz-background-size: cover;
+  background--o-background-size: cover;
+  background--webkit-background-size: cover;
+  background-background-size: cover;
+}
+
+/* line 14, ../sass/_events.sass */
+.first {
+  padding-top: 60px;
+}
+
+/* line 16, ../sass/_events.sass */
+.queen {
+  background-image: url("../img/oct2014/epic.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background--moz-background-size: cover;
+  background--o-background-size: cover;
+  background--webkit-background-size: cover;
+  background-background-size: cover;
+}
+
+/* line 18, ../sass/_events.sass */
+.campusnight_oct {
+  background-image: url("../img/oct2014/campusnight.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background--moz-background-size: cover;
+  background--o-background-size: cover;
+  background--webkit-background-size: cover;
+  background-background-size: cover;
+}
+
+/* line 20, ../sass/_events.sass */
+.makers9 {
+  background-image: url("../img/oct2014/makers.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background--moz-background-size: cover;
+  background--o-background-size: cover;
+  background--webkit-background-size: cover;
+  background-background-size: cover;
+}
+
+/* line 22, ../sass/_events.sass */
+.fuck {
+  background-image: url("../img/oct2014/fuck.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background--moz-background-size: cover;
+  background--o-background-size: cover;
+  background--webkit-background-size: cover;
+  background-background-size: cover;
+}
+
+/* line 24, ../sass/_events.sass */
+.republic {
+  background-image: url("../img/oct2014/rpvblic.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background--moz-background-size: cover;
+  background--o-background-size: cover;
+  background--webkit-background-size: cover;
+  background-background-size: cover;
+}
+
+/* line 26, ../sass/_events.sass */
+.hackfound {
+  background-image: url("../img/oct2014/hackersfounders.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background--moz-background-size: cover;
+  background--o-background-size: cover;
+  background--webkit-background-size: cover;
+  background-background-size: cover;
+}
+
+/* line 1, ../sass/_dashboard.sass */
+.money {
+  border-left: #32c459 solid 2px;
+}
+
+/* line 3, ../sass/_dashboard.sass */
+.concurso {
+  border-left: #eb374b solid 2px;
+}
+
+/* line 5, ../sass/_dashboard.sass */
+.comunidades {
+  border-left: #33ccff solid 2px;
+}
+
+/* line 7, ../sass/_dashboard.sass */
+.curso {
+  border-left: #ebd33a solid 2px;
+}
+
+/* line 9, ../sass/_dashboard.sass */
+.cuatro {
+  *zoom: 1;
+  width: auto;
+  max-width: 90%;
+  float: none;
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 0;
+  padding-right: 0;
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-weight: 300;
+  font-size: 9em;
+}
+/* line 344, ../jeet/_grid.scss */
+.cuatro:before, .cuatro:after {
+  content: '';
+  display: table;
+}
+/* line 349, ../jeet/_grid.scss */
+.cuatro:after {
+  clear: both;
+}
+
+/* line 13, ../sass/_dashboard.sass */
+.sadface {
+  *zoom: 1;
+  width: auto;
+  max-width: 90%;
+  float: none;
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 0;
+  padding-right: 0;
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-weight: 300;
+  font-size: 5em;
+}
+/* line 344, ../jeet/_grid.scss */
+.sadface:before, .sadface:after {
+  content: '';
+  display: table;
+}
+/* line 349, ../jeet/_grid.scss */
+.sadface:after {
+  clear: both;
+}
+/* line 17, ../sass/_dashboard.sass */
+.sadface img {
+  *zoom: 1;
+  float: left;
+  clear: none;
+  text-align: inherit;
+  width: 31.33333%;
+  margin-left: 0%;
+  margin-right: 3%;
+  display: inline-block;
+}
+/* line 344, ../jeet/_grid.scss */
+.sadface img:before, .sadface img:after {
+  content: '';
+  display: table;
+}
+/* line 349, ../jeet/_grid.scss */
+.sadface img:after {
+  clear: both;
+}
+/* line 58, ../jeet/_grid.scss */
+.sadface img:last-child {
+  margin-right: 0%;
+}
+/* line 20, ../sass/_dashboard.sass */
+.sadface p {
+  margin-top: 60px;
+  *zoom: 1;
+  float: left;
+  clear: none;
+  text-align: inherit;
+  width: 65.66667%;
+  margin-left: 0%;
+  margin-right: 3%;
+  display: inline-block;
+}
+/* line 344, ../jeet/_grid.scss */
+.sadface p:before, .sadface p:after {
+  content: '';
+  display: table;
+}
+/* line 349, ../jeet/_grid.scss */
+.sadface p:after {
+  clear: both;
+}
+/* line 58, ../jeet/_grid.scss */
+.sadface p:last-child {
+  margin-right: 0%;
+}
+
+/* line 24, ../sass/_dashboard.sass */
+.navhead {
+  background: #524d5a;
+  height: 50px;
+}
+/* line 28, ../sass/_dashboard.sass */
+.navhead .navhead-cont {
+  *zoom: 1;
+  width: auto;
+  max-width: 95%;
+  float: none;
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 0;
+  padding-right: 0;
+}
+/* line 344, ../jeet/_grid.scss */
+.navhead .navhead-cont:before, .navhead .navhead-cont:after {
+  content: '';
+  display: table;
+}
+/* line 349, ../jeet/_grid.scss */
+.navhead .navhead-cont:after {
+  clear: both;
+}
+/* line 30, ../sass/_dashboard.sass */
+.navhead .navhead-cont img {
+  padding-top: 5px;
+  max-height: 40px;
+}
+/* line 33, ../sass/_dashboard.sass */
+.navhead .navhead-cont .acercade {
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-weight: 300;
+  margin-top: 15px;
+  color: white;
+  font-size: 2em;
+  float: right;
+}
+
+/* line 39, ../sass/_dashboard.sass */
+.maincontent {
+  *zoom: 1;
+  width: auto;
+  max-width: 90%;
+  float: none;
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 0;
+  padding-right: 0;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+/* line 344, ../jeet/_grid.scss */
+.maincontent:before, .maincontent:after {
+  content: '';
+  display: table;
+}
+/* line 349, ../jeet/_grid.scss */
+.maincontent:after {
+  clear: both;
+}
+/* line 42, ../sass/_dashboard.sass */
+.maincontent h1 {
+  padding-top: 10px;
+}
+
+/* line 45, ../sass/_dashboard.sass */
+.selecter {
+  margin-top: 10px;
+  text-align: left;
+  width: 100%;
+  border-bottom: #ff3399 solid 1px;
+}
+/* line 51, ../sass/_dashboard.sass */
+.selecter i {
+  font-size: 2em;
+  display: inline-block;
+}
+/* line 54, ../sass/_dashboard.sass */
+.selecter p {
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-weight: 300;
+  display: inline-block;
+  font-size: 2em;
+}
+/* line 58, ../sass/_dashboard.sass */
+.selecter .tipo {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+  cursor: pointer;
+  padding: 10px;
+  display: inline-block;
+  margin-right: 50px;
+}
+/* line 64, ../sass/_dashboard.sass */
+.selecter .lugar {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+  display: inline-block;
+  padding: 10px;
+  cursor: pointer;
+}
+/* line 69, ../sass/_dashboard.sass */
+.selecter .drop-tipo {
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  display: none;
+  z-index: 9999;
+  color: #524d5a;
+  width: 100%;
+}
+/* line 75, ../sass/_dashboard.sass */
+.selecter .drop-tipo i {
+  font-size: 25px;
+}
+/* line 77, ../sass/_dashboard.sass */
+.selecter .drop-lugar {
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  display: none;
+  z-index: 9999;
+  color: #524d5a;
+  width: 100%;
+}
+/* line 83, ../sass/_dashboard.sass */
+.selecter .drop-lugar i {
+  font-size: 25px;
+}
+/* line 86, ../sass/_dashboard.sass */
+.selecter .item {
+  padding: 0.5em;
+  cursor: pointer;
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-weight: 300;
+  font-size: 2em;
+  margin-bottom: 5px;
+}
+/* line 92, ../sass/_dashboard.sass */
+.selecter .item:first-child {
+  margin-top: 5px;
+}
+/* line 94, ../sass/_dashboard.sass */
+.selecter .item:hover {
+  background: rgba(64, 64, 64, 0.8);
+  color: white;
+}
+
+/* line 97, ../sass/_dashboard.sass */
+.events-collection {
+  color: #7E7F7C;
+  cursor: pointer;
+  height: 500px;
+  overflow-y: scroll;
+  *zoom: 1;
+  float: left;
+  clear: none;
+  text-align: inherit;
+  width: 31.33333%;
+  margin-left: 0%;
+  margin-right: 3%;
+  position: relative;
+  left: -68.66667%;
+  margin-top: 20px;
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-weight: 300;
+}
+/* line 344, ../jeet/_grid.scss */
+.events-collection:before, .events-collection:after {
+  content: '';
+  display: table;
+}
+/* line 349, ../jeet/_grid.scss */
+.events-collection:after {
+  clear: both;
+}
+/* line 50, ../jeet/_grid.scss */
+.events-collection:nth-child(1n) {
+  margin-right: 0%;
+  float: right;
+}
+/* line 54, ../jeet/_grid.scss */
+.events-collection:nth-child(1n + 1) {
+  clear: both;
+}
+
+/* line 106, ../sass/_dashboard.sass */
+.card {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  position: relative;
+  margin-bottom: 15px;
+}
+/* line 111, ../sass/_dashboard.sass */
+.card .date {
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-weight: 400;
+  font-size: 3em;
+  text-align: left;
+  padding-left: 10px;
+}
+/* line 116, ../sass/_dashboard.sass */
+.card .title {
+  font-size: 2.3em;
+  text-align: left;
+  margin-top: 5px;
+  padding-left: 12px;
+}
+/* line 121, ../sass/_dashboard.sass */
+.card .fa-map-marker {
+  font-size: 1.8em;
+  text-align: left;
+  margin-top: 5px;
+  padding-left: 13px;
+}
+/* line 126, ../sass/_dashboard.sass */
+.card .fa-chevron-right {
+  position: absolute;
+  right: 0;
+  bottom: 3.33333px;
+  font-size: 1.5em;
+}
+/* line 131, ../sass/_dashboard.sass */
+.card:hover {
+  background: rgba(127, 127, 127, 0.2);
+}
+/* line 133, ../sass/_dashboard.sass */
+.card:active {
+  background: rgba(127, 127, 127, 0.2);
+}
+
+/* line 135, ../sass/_dashboard.sass */
+.content-display {
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-weight: 300;
+  *zoom: 1;
+  float: left;
+  clear: none;
+  text-align: inherit;
+  width: 65.66667%;
+  margin-left: 0%;
+  margin-right: 3%;
+  position: relative;
+  left: 34.33333%;
+  margin-top: 20px;
+}
+/* line 344, ../jeet/_grid.scss */
+.content-display:before, .content-display:after {
+  content: '';
+  display: table;
+}
+/* line 349, ../jeet/_grid.scss */
+.content-display:after {
+  clear: both;
+}
+/* line 58, ../jeet/_grid.scss */
+.content-display:last-child {
+  margin-right: 0%;
+}
+/* line 140, ../sass/_dashboard.sass */
+.content-display .evento {
+  text-align: left;
+  *zoom: 1;
+  width: auto;
+  max-width: 90%;
+  float: none;
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 0;
+  padding-right: 0;
+}
+/* line 344, ../jeet/_grid.scss */
+.content-display .evento:before, .content-display .evento:after {
+  content: '';
+  display: table;
+}
+/* line 349, ../jeet/_grid.scss */
+.content-display .evento:after {
+  clear: both;
+}
+
+/* line 143, ../sass/_dashboard.sass */
+.about-event {
+  display: none;
+}
+/* line 145, ../sass/_dashboard.sass */
+.about-event .external {
+  padding: 1em;
+  text-align: center;
+  background: #33ccff;
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-weight: 300;
+  font-size: 2em;
+  margin-top: 30px;
+  color: white;
+  margin-top: 10px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+}
+/* line 155, ../sass/_dashboard.sass */
+.about-event img {
+  *zoom: 1;
+  width: auto;
+  max-width: 90%;
+  float: none;
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 0;
+  padding-right: 0;
+  max-height: 200px;
+  text-align: center;
+  max-width: 100%;
+}
+/* line 344, ../jeet/_grid.scss */
+.about-event img:before, .about-event img:after {
+  content: '';
+  display: table;
+}
+/* line 349, ../jeet/_grid.scss */
+.about-event img:after {
+  clear: both;
+}
+/* line 160, ../sass/_dashboard.sass */
+.about-event .event-title {
+  margin-top: 10px;
+  font-size: 3.5em;
+}
+/* line 163, ../sass/_dashboard.sass */
+.about-event .event-desc {
+  margin-top: 5px;
+  font-size: 1.8em;
+  line-height: 140%;
+}
+/* line 167, ../sass/_dashboard.sass */
+.about-event .tweetme {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+/* line 171, ../sass/_dashboard.sass */
+.addcalendar {
+  display: none;
+  margin-top: 20px;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+  margin-bottom: 20px;
+}
+
+/* line 178, ../sass/_dashboard.sass */
+.fixup {
+  position: fixed;
+  background-color: white;
+  top: 0;
+  z-index: 99999;
+  width: 100%;
+}
+
+/* line 185, ../sass/_dashboard.sass */
+.upbar h1 {
+  display: inline-block;
+}
+/* line 187, ../sass/_dashboard.sass */
+.upbar .bn {
+  margin-top: 7px;
+  display: inline-block;
+  float: right;
+  font-size: 2em;
+}
+/* line 192, ../sass/_dashboard.sass */
+.upbar .bn .back {
+  cursor: pointer;
+  display: inline-block;
+  padding: 10px;
+}
+/* line 196, ../sass/_dashboard.sass */
+.upbar .bn .back:hover {
+  border-bottom: solid #ff3399 1px;
+}
+/* line 198, ../sass/_dashboard.sass */
+.upbar .bn .next {
+  cursor: pointer;
+  display: inline-block;
+  padding: 10px;
+}
+/* line 202, ../sass/_dashboard.sass */
+.upbar .bn .next:hover {
+  border-bottom: solid #ff3399 1px;
+}
+
+/* line 205, ../sass/_dashboard.sass */
+.month {
+  display: none;
+}
+
+/* line 207, ../sass/_dashboard.sass */
+.main {
+  display: block;
+}
+
+@media screen and (max-width: 500px) {
+  /* line 214, ../sass/_dashboard.sass */
+  .maincontent {
+    *zoom: 1;
+    width: auto;
+    max-width: 98%;
+    float: none;
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: 0;
+    padding-right: 0;
+  }
+  /* line 344, ../jeet/_grid.scss */
+  .maincontent:before, .maincontent:after {
+    content: '';
+    display: table;
+  }
+  /* line 349, ../jeet/_grid.scss */
+  .maincontent:after {
+    clear: both;
+  }
+
+  /* line 217, ../sass/_dashboard.sass */
+  .content-display {
+    display: block;
+    clear: both;
+    float: none;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    *zoom: 1;
+    float: left;
+    clear: none;
+    text-align: inherit;
+    width: 100%;
+    margin-left: 0%;
+    margin-right: 3%;
+    position: static;
+    left: 0;
+    display: none;
+  }
+  /* line 265, ../jeet/_grid.scss */
+  .content-display:first-child {
+    margin-left: auto;
+  }
+  /* line 269, ../jeet/_grid.scss */
+  .content-display:last-child {
+    margin-right: auto;
+  }
+  /* line 344, ../jeet/_grid.scss */
+  .content-display:before, .content-display:after {
+    content: '';
+    display: table;
+  }
+  /* line 349, ../jeet/_grid.scss */
+  .content-display:after {
+    clear: both;
+  }
+  /* line 58, ../jeet/_grid.scss */
+  .content-display:last-child {
+    margin-right: 0%;
+  }
+
+  /* line 222, ../sass/_dashboard.sass */
+  .events-collection {
+    overflow-y: visible;
+    display: block;
+    clear: both;
+    float: none;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    *zoom: 1;
+    float: left;
+    clear: none;
+    text-align: inherit;
+    width: 100%;
+    margin-left: 0%;
+    margin-right: 3%;
+    position: static;
+    left: 0;
+  }
+  /* line 265, ../jeet/_grid.scss */
+  .events-collection:first-child {
+    margin-left: auto;
+  }
+  /* line 269, ../jeet/_grid.scss */
+  .events-collection:last-child {
+    margin-right: auto;
+  }
+  /* line 344, ../jeet/_grid.scss */
+  .events-collection:before, .events-collection:after {
+    content: '';
+    display: table;
+  }
+  /* line 349, ../jeet/_grid.scss */
+  .events-collection:after {
+    clear: both;
+  }
+  /* line 58, ../jeet/_grid.scss */
+  .events-collection:last-child {
+    margin-right: 0%;
+  }
+
+  /* line 227, ../sass/_dashboard.sass */
+  .addcalendar {
+    display: block;
+  }
+}
+/* line 5, ../../../.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+/* line 22, ../../../.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
+html {
+  line-height: 1;
+}
+
+/* line 24, ../../../.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
+ol, ul {
+  list-style: none;
+}
+
+/* line 26, ../../../.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 28, ../../../.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+/* line 30, ../../../.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
+q, blockquote {
+  quotes: none;
+}
+/* line 103, ../../../.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+/* line 32, ../../../.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
+a img {
+  border: none;
+}
+
+/* line 116, ../../../.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+  display: block;
+}
+
+/* line 12, ../sass/styles.sass */
+a {
+  color: white;
+  text-decoration: none;
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-weight: 200;
+}
+
+/* line 16, ../sass/styles.sass */
+.splash {
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-weight: 300;
+  color: white;
+  background-image: url("../img/splashbackground.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background--moz-background-size: cover;
+  background--o-background-size: cover;
+  background--webkit-background-size: cover;
+  background-background-size: cover;
+  height: 100%;
+  position: relative;
+}
+/* line 27, ../sass/styles.sass */
+.splash .nav {
+  *zoom: 1;
+  width: auto;
+  max-width: 95%;
+  float: none;
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 0;
+  padding-right: 0;
+}
+/* line 344, ../jeet/_grid.scss */
+.splash .nav:before, .splash .nav:after {
+  content: '';
+  display: table;
+}
+/* line 349, ../jeet/_grid.scss */
+.splash .nav:after {
+  clear: both;
+}
+/* line 29, ../sass/styles.sass */
+.splash .nav a {
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-weight: 400;
+  color: white;
+  float: right;
+  padding-right: 1em;
+  padding-left: 1em;
+  padding-top: 1em;
+  padding-bottom: 0.5em;
+  font-size: 2em;
+}
+/* line 38, ../sass/styles.sass */
+.splash .nav a:hover {
+  border-bottom: solid #ff3399 2px;
+}
+/* line 40, ../sass/styles.sass */
+.splash .splash-container {
+  *zoom: 1;
+  width: auto;
+  max-width: 50%;
+  float: none;
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 0;
+  padding-right: 0;
+  text-align: center;
+}
+/* line 344, ../jeet/_grid.scss */
+.splash .splash-container:before, .splash .splash-container:after {
+  content: '';
+  display: table;
+}
+/* line 349, ../jeet/_grid.scss */
+.splash .splash-container:after {
+  clear: both;
+}
+/* line 43, ../sass/styles.sass */
+.splash .splash-container img {
+  max-width: 70%;
+}
+/* line 47, ../sass/styles.sass */
+.splash .events-btn {
+  cursor: pointer;
+  margin-top: 30px;
+  *zoom: 1;
+  width: auto;
+  max-width: 50%;
+  float: none;
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 0;
+  padding-right: 0;
+  border: 1px solid white;
+}
+/* line 344, ../jeet/_grid.scss */
+.splash .events-btn:before, .splash .events-btn:after {
+  content: '';
+  display: table;
+}
+/* line 349, ../jeet/_grid.scss */
+.splash .events-btn:after {
+  clear: both;
+}
+/* line 53, ../sass/styles.sass */
+.splash .events-btn h2 {
+  font-size: 2.3em;
+  padding-bottom: 0.5em;
+}
+/* line 57, ../sass/styles.sass */
+.splash .events-btn i {
+  padding-top: 0.5em;
+}
+/* line 59, ../sass/styles.sass */
+.splash .events-btn:hover {
+  background: rgba(252, 252, 252, 0.3);
+}
+
+/* line 62, ../sass/styles.sass */
+.ghost {
+  display: none;
+}
+
+/* line 64, ../sass/styles.sass */
+.container {
+  *zoom: 1;
+  width: auto;
+  max-width: 90%;
+  float: none;
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 0;
+  padding-right: 0;
+}
+/* line 344, ../jeet/_grid.scss */
+.container:before, .container:after {
+  content: '';
+  display: table;
+}
+/* line 349, ../jeet/_grid.scss */
+.container:after {
+  clear: both;
+}
+/* line 66, ../sass/styles.sass */
+.container p {
+  margin-top: 10px;
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-weight: 300;
+  font-size: 2em;
+  line-height: 140%;
+}
+/* line 71, ../sass/styles.sass */
+.container h2 {
+  margin-top: 10px;
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-weight: 400;
+  font-size: 2.5em;
+}
+/* line 75, ../sass/styles.sass */
+.container .contact {
+  text-align: center;
+  *zoom: 1;
+  width: auto;
+  max-width: 100%;
+  float: none;
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 0;
+  padding-right: 0;
+  margin-top: 20px;
+}
+/* line 344, ../jeet/_grid.scss */
+.container .contact:before, .container .contact:after {
+  content: '';
+  display: table;
+}
+/* line 349, ../jeet/_grid.scss */
+.container .contact:after {
+  clear: both;
+}
+/* line 79, ../sass/styles.sass */
+.container .contact .contact-type {
+  margin-top: 10px;
+  text-align: center;
+  *zoom: 1;
+  float: left;
+  clear: none;
+  text-align: inherit;
+  width: 100%;
+  margin-left: 0%;
+  margin-right: 3%;
+}
+/* line 344, ../jeet/_grid.scss */
+.container .contact .contact-type:before, .container .contact .contact-type:after {
+  content: '';
+  display: table;
+}
+/* line 349, ../jeet/_grid.scss */
+.container .contact .contact-type:after {
+  clear: both;
+}
+/* line 58, ../jeet/_grid.scss */
+.container .contact .contact-type:last-child {
+  margin-right: 0%;
+}
+/* line 83, ../sass/styles.sass */
+.container .contact a {
+  text-align: center;
+  font-size: 2.5em;
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-weight: 300;
+  text-decoration: none;
+  font-style: none;
+  color: #524d5a;
+}
+/* line 90, ../sass/styles.sass */
+.container .contact .twit:hover {
+  color: #55acee;
+}
+/* line 92, ../sass/styles.sass */
+.container .contact .mail:hover {
+  color: tomato;
+}
+/* line 94, ../sass/styles.sass */
+.container .contact i {
+  font-size: 2em;
+}
+/* line 96, ../sass/styles.sass */
+.container #mc_embed_signup {
+  background: #fff;
+  clear: left;
+}
+
+@media screen and (max-width: 1920px) {
+  /* line 102, ../sass/styles.sass */
+  html, body {
+    font-size: 10px;
+  }
+}
+@media screen and (max-width: 1300px) {
+  /* line 106, ../sass/styles.sass */
+  html, body {
+    font-size: 9px;
+  }
+
+  /* line 108, ../sass/styles.sass */
+  .splash-container {
+    padding-top: 15%;
+    padding-bottom: 15%;
+  }
+}
+@media screen and (max-width: 400px) {
+  /* line 112, ../sass/styles.sass */
+  html, body {
+    font-size: 8px;
+  }
+
+  /* line 114, ../sass/styles.sass */
+  .splash {
+    height: 100%;
+  }
+  /* line 116, ../sass/styles.sass */
+  .splash .events-btn {
+    *zoom: 1;
+    width: auto;
+    max-width: 200px;
+    float: none;
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: 0;
+    padding-right: 0;
+  }
+  /* line 344, ../jeet/_grid.scss */
+  .splash .events-btn:before, .splash .events-btn:after {
+    content: '';
+    display: table;
+  }
+  /* line 349, ../jeet/_grid.scss */
+  .splash .events-btn:after {
+    clear: both;
+  }
+}
+@media screen and (min-width: 1260px) {
+  /* line 120, ../sass/styles.sass */
+  .splash-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    -ms-transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+  }
+}
+@media screen and (max-width: 610px) {
+  /* line 124, ../sass/styles.sass */
+  .splash-container {
+    padding-top: 30px;
+  }
+}

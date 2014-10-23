@@ -1,0 +1,48 @@
+mixin event(clase,dia,titulo,lugar,hora)
+	.event(class=clase)
+		.this(class!=attributes.class)
+			.day= dia
+			.name= titulo
+			.place
+				i.fa.fa-map-marker.fa-2x
+				.plc= lugar
+			.time
+				i.fa.fa-clock-o.fa-2x
+				.td= hora
+				.view Ver más &nbsp;<i class="fa fa-chevron-right"></i>
+
+mixin event-desc(title,desc,start,end,evplace)
+	.event-description
+		h1= title
+		.about-ev
+			p= desc
+		.add-call
+			a(title="Add to Calendar" class="addthisevent") <i class="fa fa-calendar"><br><span>Añadir al calendario</span></i>
+				span(class="_start")= start
+				span(class="_end")= end
+				span(class="_zonecode") 12
+				span(class="_summary")= title
+				span(class="_description")= desc
+				span(class="_location")= evplace
+				span(class="_all_day_event") false
+				span(class="_date_format") DD/MM/YYYY
+mixin mes(mes)
+	.mes
+		.before-after
+			.bcknxt.back
+				i.fa.fa-chevron-left 
+				.reg &nbsp;Anterior
+			.bcknxt.next
+				.reg Siguiente&nbsp;
+				i.fa.fa-chevron-right
+		.line
+			.ms=mes
+			.search 
+				i.fa.fa-map-marker <span class="filter-title">&nbsp;Todos</span>
+			.nv-search
+				.pl.endf D.F
+				.pl.engdl Guadalajara
+				.pl.anyone Todos
+	
+
+

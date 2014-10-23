@@ -1,0 +1,231 @@
+.money
+	border-left: $green solid 2px
+.concurso
+	border-left: $red solid 2px
+.comunidades
+	border-left: $blue solid 2px
+.curso
+	border-left: $yellow solid 2px
+.cuatro
+	+center(90%)
+	+helvetica(300)
+	font-size: 9em
+.sadface
+	+center(90%)
+	+helvetica(300)
+	font-size: 5em
+	img
+		+col(1/3)
+		display: inline-block
+	p
+		margin-top: $spacer*6
+		+col(2/3)
+		display: inline-block
+.navhead
+	background: $gray
+	height: 50px
+
+	.navhead-cont
+		+center(95%)
+		img
+			padding-top: 5px
+			max-height: 40px
+		.acercade
+			+helvetica(300)
+			margin-top: $spacer*1.5
+			color: white
+			font-size: 2em
+			float: right
+.maincontent
+	+center(90%)
+	margin-top: $spacer
+	h1
+		padding-top: $spacer
+	margin-bottom: $spacer*2
+.selecter
+	margin-top: $spacer
+	text-align: left
+	width: 100%
+	
+	border-bottom: $pink solid 1px
+	i
+		font-size: 2em
+		display: inline-block
+	p
+		+helvetica(300)
+		display: inline-block
+		font-size: 2em
+	.tipo
+		+user-select(none)
+		cursor: pointer
+		padding: $spacer
+		display: inline-block
+		margin-right: $spacer*5
+	.lugar
+		+user-select(none)
+		display: inline-block
+		padding: $spacer
+		cursor: pointer
+	.drop-tipo
+		+border-radius(10px)
+		display: none
+		z-index: 9999
+		color: $gray
+		width: 100% 
+		i
+			font-size: $spacer*2.5
+	.drop-lugar
+		+border-radius(10px)
+		display: none
+		z-index: 9999
+		color: $gray
+		width: 100% 
+		i
+			font-size: $spacer*2.5
+
+	.item
+		padding: .5em
+		cursor: pointer
+		+helvetica(300)
+		font-size: 2em
+		margin-bottom: $spacer/2
+	.item:first-child
+		margin-top: $spacer/2
+	.item:hover
+		background: $semiblack
+		color: white
+.events-collection
+	color: $softgray
+	cursor: pointer
+	height: 500px 
+	overflow-y: scroll
+	+col(1/3, $cycle:1)
+	+shift(-2/3)
+	margin-top: $spacer*2
+	+helvetica(300)
+.card
+	+user-select(none)
+	+border-radius(5px)
+	position: relative
+	margin-bottom: $spacer*1.5
+	.date
+		+helvetica(400)
+		font-size: 3em
+		text-align: left
+		padding-left: $spacer
+	.title
+		font-size: 2.3em
+		text-align: left
+		margin-top: $spacer/2
+		padding-left: $spacer*1.2
+	.fa-map-marker
+		font-size: 1.8em
+		text-align: left
+		margin-top: $spacer/2
+		padding-left: $spacer*1.3
+	.fa-chevron-right
+		position: absolute
+		right: 0
+		bottom: $spacer/3
+		font-size: 1.5em
+	&:hover
+		background: $softlight
+	&:active
+		background: $softlight
+.content-display
+	+helvetica(300)
+	+col(2/3)
+	+shift(1/3)
+	margin-top: $spacer*2
+	.evento
+		text-align: left
+		+center(90%)
+.about-event
+	display: none
+	.external
+		padding: 1em
+		text-align: center
+		background: $blue
+		+helvetica(300)
+		font-size: 2em
+		margin-top: $spacer*3
+		color: white
+		margin-top: $spacer
+		+user-select(none)
+	img
+		+center(90%)
+		max-height: 200px
+		text-align: center
+		max-width: 100%
+	.event-title
+		margin-top: $spacer
+		font-size: 3.5em
+	.event-desc
+		margin-top: $spacer/2
+		font-size: 1.8em
+		line-height: 140%
+	.tweetme
+		margin-top: $spacer
+		margin-bottom: $spacer
+
+.addcalendar
+	display: none
+	margin-top: $spacer*2
+	cursor: pointer
+	+user-select(none)
+	margin-bottom: $spacer*2
+
+.fixup
+	position: fixed
+	background-color: white
+	top: 0
+	z-index: 99999
+	width: 100%
+.upbar
+	h1
+		display: inline-block
+	.bn
+		margin-top: $spacer*.7
+		display: inline-block
+		float: right
+		font-size: 2em
+		.back
+			cursor: pointer
+			display: inline-block
+			padding: $spacer
+		.back:hover
+			border-bottom: solid $pink 1px
+		.next
+			cursor: pointer
+			display: inline-block
+			padding: $spacer
+		.next:hover
+			border-bottom: solid $pink 1px
+
+.month
+	display: none
+.main
+	display: block
+
+
+
+@media screen and (max-width: 500px)
+
+	.maincontent
+		+center(98%)
+
+	.content-display
+		+stack()
+		+col(1)
+		+unshift()
+		display: none
+	.events-collection
+		overflow-y: visible
+		+stack()
+		+col(1)
+		+unshift()
+	.addcalendar
+		display: block
+
+		
+

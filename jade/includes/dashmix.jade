@@ -1,0 +1,52 @@
+mixin card(clas,dia,titulo,lugar)
+	.card(class= clas)
+		.date= dia
+		.title= titulo
+		i.fa.fa-map-marker= lugar
+		i.fa.fa-chevron-right
+
+mixin event(imagen,titler,descript,href,starta,enda,evplace)
+	.about-event
+		img(src=imagen)
+		.event-title= titler
+		.event-desc= descript
+		a(href="https://twitter.com/share" data-text="This is what we want to change dynamically" data-count="none" data-via="HaciendoMX").twitter-share-button.tweetme
+		.external
+			a(href=href target="_blank") Ir a sitio del evento <i class="fa fa-external-link"></i>
+		.addcalendar
+			a(title="Add to Calendar" class="addthisevent elec") <i class="fa fa-calendar"></i> &nbsp;Añadir al calendario
+				span(class="_start")= starta
+				span(class="_end")= enda
+				span(class="_zonecode") 12
+				span(class="_summary")= titler
+				span(class="_description")= descript
+				span(class="_location")= evplace
+				span(class="_all_day_event") false
+				span(class="_date_format") DD/MM/YYYY
+
+mixin upbar(mes)
+	.upbar
+		h1= mes
+		.bn
+			.back<i class="fa fa-chevron-left"></i>
+			.next<i class="fa fa-chevron-right"></i>
+		.selecter
+			.tipo
+				i.fa.fa-filter
+				p.eventitle &nbsp; Tipo de evento&nbsp;
+				i.fa.fa-unsorted
+
+			.lugar
+				i.fa.fa-filter
+				p.evenlugar &nbsp; Lugar&nbsp;
+				i.fa.fa-unsorted
+			.drop-tipo
+					.item.money.inv <i class="fa fa-money"></i>&nbsp;Financiamiento y Apoyos
+					.item.cursos.curso <i class=" fa fa-graduation-cap"></i>&nbsp;Cursos y Conferencias
+					.item.comunidades.comunity <i class="fa fa-users"></i>&nbsp;Reuniónes de Comunidad
+					.item.concursos.concurso <i class="fa fa-rocket"></i>&nbsp;Concursos
+					.item.alltipo <i class="fa fa-circle-o-notch"></i>&nbsp;Todos
+			.drop-lugar
+					.item.distrito <i class="fa fa-map-marker"></i>&nbsp;D.F
+					.item.guadal <i class="fa fa-map-marker"></i>&nbsp;Guadalajara
+					.item.allugar <i class="fa fa-map-marker"></i>&nbsp;Todos

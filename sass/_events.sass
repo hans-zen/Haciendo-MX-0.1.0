@@ -1,0 +1,28 @@
+@mixin section($img)
+	background:
+		image: url($img)
+		repeat: no-repeat
+		position: center
+		+background-size(cover)
+
+.comunidad
+	+section("../img/blue.jpg")
+.networking
+	+section("../img/red.jpg")
+.fondos
+	+section("../img/green.jpg")
+.first
+	padding-top: 60px
+.queen
+	+section("../img/oct2014/epic.jpg")
+.campusnight_oct
+	+section("../img/oct2014/campusnight.jpg")
+.makers9
+	+section("../img/oct2014/makers.jpg")
+.fuck
+	+section("../img/oct2014/fuck.jpg")
+.republic
+	+section("../img/oct2014/rpvblic.jpg")
+.hackfound
+	+section("../img/oct2014/hackersfounders.jpg")
+

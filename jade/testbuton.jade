@@ -1,0 +1,20 @@
+doctype
+html
+	include header
+	include includes/dashmix
+	body
+
+		+event(
+			'img/blue.jpg',
+			'Evento cool',
+			'Lorem ipsum Velit ',
+			'http://twitter.com',
+			'09-10-2014 20:00:00',
+			'09-10-2014 23:00:00',
+			'HackerGarage, Vidrio, Obrera, Guadalajara, México'
+			)
+
+
+	script(src="app/bower_components/jquery/dist/jquery.js")
+	script(src="app/bower_components/jquery-ui/jquery-ui.js")
+	script(type="text/javascript" src="https://addthisevent.com/libs/1.5.8/ate.min.js")
